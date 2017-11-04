@@ -1,0 +1,107 @@
+syntax = "proto3";
+package protobuf.http;
+message CreateOrderRecordC{
+	string hOpCode=1;//必有
+	string appId=2;//必有
+	string orderRecordOrderId=3;//订单id与appid联合唯一，必有
+	double orderRecordTotalPrice=4;//总价格，必有
+	string orderRecordUserId=5;//必有
+	string orderRecordOrderDetail=6;//订单详情，可选
+	string orderRecordUserName=7;//用户名，可选
+	string orderRecordReturnUrl=8;//，可选
+	string orderRecordNotifyUrl=9;//，可选
+	repeated OrderGoodsSendData orderGoodsArray=10;//最少有一个
+}
+message CreateOrderRecordS{
+	string hOpCode=1;
+	OrderRecordData orderRecordData=2;
+}
+message UpdateOrderRecordC{
+	string hOpCode=1;
+	string orderRecordId=2;
+	int32 orderRecordPayStatus=3;//支付状态 1未支付 2已支付
+	int32 orderRecordStatus=4;//订单记录状态 1存在 2已删除
+	int32 orderRecordPayChannel=5;//渠道 1支付宝
+	int32 orderRecordNotifyResult=6;//1未通知2已通知
+	int32 orderRecordNotifyTime=7;//通知次数
+	
+}
+message UpdateOrderRecordS{
+	string hOpCode=1;
+	OrderRecordData orderRecordData=2;
+}
+message GetOrderRecordC{
+	string hOpCode=1;
+	string orderRecordId=2;
+	
+}
+message GetOrderRecordS{
+	string hOpCode=1;
+	OrderRecordData orderRecordData=2;
+}
+message GetOrderRecordListC{
+	string hOpCode=1;
+	string appId=2;
+	string orderRecordOrderId=3;
+	string orderRecordCreateTimeGreaterThan=4;//大于等于某个时间段（yyyy-MM-dd HH:mm:ss）
+	string orderRecordCreateTimeLessThan=5;//小于等于某个时间段（yyyy-MM-dd HH:mm:ss）
+	int32 orderRecordPayStatus=6;//支付状态 1未支付 2已支付
+	int32 orderRecordStatus=7;//订单记录状态 1存在 2已删除
+	string orderRecordUserId=8;
+	int32 orderRecordPayChannel=9;//渠道 1支付宝
+	string orderRecordOrderDetail=10;
+	int32 orderRecordNotifyResult=11;//1未通知2已通知
+	int32 currentPage=12;
+	int32 pageSize=13;//pageSize传0，说明不分页
+}
+message GetOrderRecordListS{
+	string hOpCode=1;
+	repeated OrderRecordData orderRecordList=2;
+	int32 currentPage=3;
+	int32 pageSize=4;//pageSize传0，说明不分页
+	int32 totalPage=5;//总页数
+	int32 allNum=6;//总条数
+}
+message OrderRecordData{
+	string orderRecordId=1;
+	string appId=2;
+	string orderRecordOrderId=3;
+	double orderRecordTotalPrice=4;
+	string orderRecordCreateTime=5;
+	string orderRecordUpdateTime=6;
+	int32 orderRecordPayStatus=7;//支付状态 1未支付 2已支付
+	int32 orderRecordStatus=8;//订单记录状态 1存在 2已删除
+	string orderRecordUserId=9;//
+	int32 orderRecordPayChannel=10;//渠道 1支付宝
+	string orderRecordOrderDetail=11;
+	string orderRecordUserName=12;
+	string orderRecordReturnUrl=13;
+	string orderRecordNotifyUrl=14;
+	int32 orderRecordNotifyResult=15;//1未通知2已通知
+	int32 orderRecordNotifyTime=16;//通知次数
+	string tradeNo=17;
+	string buyerEmail=18;
+	string notifyTime=19;
+	string buyerId=20;
+	double totalFee=21;
+	string tradeStatus=22;
+	repeated OrderGoodsData orderGoodsArray=23;
+}
+message OrderGoodsSendData{
+	string orderGoodsGoodsId=1;//必有
+	string orderGoodsName=2;//必有
+	double orderGoodsPrice=3;//必有
+	int32 orderGoodsNumber=4;//必有
+	string orderGoodsDetail=5;//可选
+	string orderGoodsUrl=6;//可选
+}
+message OrderGoodsData{
+	string orderGoodsId=1;
+	string orderRecordId=2;
+	string orderGoodsGoodsId=3;
+	string orderGoodsName=4;
+	double orderGoodsPrice=5;
+	int32 orderGoodsNumber=6;
+	string orderGoodsDetail=7;
+	string orderGoodsUrl=8;
+}

@@ -1,0 +1,41 @@
+@charset "utf-8";
+.header{width:100%;height: 300px;background: url(../images/headerBg.png) center center no-repeat;}
+.wrapper{width: 1200px;margin: 0 auto;}
+.bg-e8e{background: #e8ebf0;padding-bottom:60px;box-sizing:border-box;}
+.header p{font-size: 24px;font-weight: bold;color:#fff;padding: 55px 0 0 20px;}
+.mainContain{margin-top:-180px;width: 1200px;border-radius: 3px;}
+.mainT{background: #f9fafe;padding:60px 135px 18px;border-top-left-radius:3px;border-top-right-radius:3px;}
+.mainB{background: #fff;padding:30px 135px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;}
+.state{font-size: 16px;color:#333;}
+.stateIcon{margin:0 10px 0 -27px;}
+.alert{font-size: 12px;color:#999;margin-top: 10px;}
+.alert span{color:#eb2b2b;}
+.orderbtn{float:right;font-size: 12px;color:#50b2e5;padding-right: 14px;background:url(../images/detailBtn.png) right 4px no-repeat;margin-bottom: 18px;}
+.orderbtn.up{background-position: right -8px;}
+.borderB{border-bottom:1px  solid #eff3f6;}
+.orderLT>div p{font-size: 12px;color:#999;line-height: 14px;}
+.orderList>li{padding:20px 0; border-bottom: 1px  solid #eff3f6;}
+.proDetail{font-size: 12px;color:#999;}
+.money{font-size: 12px;color:#999;text-align: right;margin-top: 18px;}
+.money span{font-size: 16px;color:#eb2b2b;font-weight: bold;}
+.payStyle{padding:20px 0 20px 43px; ;border-bottom:1px  solid #eff3f6;height: 32px;line-height: 32px;background: url(../images/payIcon.png) left center no-repeat;font-size: 16px;}
+.paySName{font-size: 12px;color:#999;float: left;line-height: 32px;}
+.payBtn{float: right;width: 144px;height: 32px;line-height: 32px;text-align: center;color:#fff;background: #50b2e5;border-radius: 3px;}
+.footer{font-size: 12px;text-align: center;height: 12px;position: absolute;bottom: 25px;width: 100%;}
+/*修改提示弹窗 start*/
+/*.layui-layer{background-color: rgba(0,0,0,.5);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);}*/
+/*.layui-layer-dialog .layui-layer-content{font-size: 16px;color:#fff;padding:33px 0;text-align: center;}*/
+/*.layui-layer-msg{box-shadow: none;}*/
+/*.layui-layer-dialog .layui-layer-content .layui-layer-ico{position: relative;width: 24px;height:24px;background: url(../images/sucIconB.png) center center no-repeat;top: 0;left:0;margin-right: 10px;}*/
+/*.fail .layui-layer-content .layui-layer-ico{background-image: url(../images/failIconB.png)}*/
+/*修改提示弹窗 over*/
+/*支付成功*/
+.paymainT{background: #f9fafe;padding-top:45px;text-align: center;border-top-left-radius:3px;border-top-right-radius:3px;}
+.payImg{height:137px;}
+.paymainB{background: #fff;padding:20px 0 40px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;}
+.payText{font-size: 16px;text-align:center;background: url(../images/sucIconS.png) 470px center no-repeat;}
+.payAlert{font-size: 12px;color:#999;margin: 10px 0 40px;text-align: center;}
+.payBtnText{font-size: 14px;color:#50b2e5;display: block;text-align: center;}
+/*支付失败*/
+.payFailT{background: url(../images/failIconS.png) 490px center no-repeat;}
+.payfooter{position: fixed;border-bottom: 25px;}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+package protobuf.http;
+message PCError{
+	string hOpCode=1;
+	PCErrorCode errorCode=2;
+	string errorHOpCode=3;
+	string extraMsg=4;
+}
+enum PCErrorCode{
+	ERROR_CODE_0=0;//未知错误
+	ERROR_CODE_1=1;//该支付订单不存在
+	ERROR_CODE_2=2;//你没有权限操作此订单
+	ERROR_CODE_3=3;//该订单不合法，不存在商品
+	ERROR_CODE_4=4;//你的身份不合法或者已过期
+	ERROR_CODE_5=5;//订单状态不合法
+	ERROR_CODE_6=6;//创建notify失败
+	ERROR_CODE_7=7;//获取returnurl失败
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>收银台--验证</title>
+    <script src="js/lib/threecss-c.js?v=v1.0.0" type="text/javascript"></script>
+</head>
+<script type="text/javascript">
+    //初始化内部类
+    $T.version.init();
+    //加载内部类
+    $T.version.loadScript("js/lib/jquery.min.js");
+    $T.version.loadScript("js/lib/jquery.cookie.js");
+    $T.version.loadScript("js/lib/Math.uuid.js");
+    //加载内部类
+    $T.version.loadScript("js/app/NotificationExt.js");
+    $T.version.loadScript("js/app/Url.js");
+    $T.version.loadScript("js/app/CookieParam.js");
+    $T.version.loadScript("js/app/CookieName.js");
+    $T.version.loadScript("js/app/data/http/LoginProxy.js");
+    $T.version.loadScript("js/app/LoginPayCenterMediator.js");
+    $T.version.loadScript("js/app/GetUrlParam.js");
+
+    $T.version.loadCss("css/skip_zy.css");
+
+    window.onload = function () {
+        //初始化过滤器
+        var testFilter = new TestFilter();
+        $T.httpResultFilter.addFilter(testFilter);
+        //初始化控制器
+        $T.loginPayCenterMediator.init();
+        $T.register.register($T.loginPayCenterMediator);
+    }
+</script>
+<body>
+<div>
+    <div class="bg_wrapper">
+        <div class="bg_in">
+            <!--注：正在跳转、跳转成功、跳转失败三个状态，显示哪个，去掉相应.tips_box后的.hide-->
+            <!--正在跳转 start-->
+            <div class="tips_box" id="tips_box_wait">
+                <div class="icon_box">
+                    <div class="loading_icon_01">
+                        <img src="images/icon_pay.png"/>
+                    </div>
+                </div>
+                <p class="skip_status">正在为您跳转到支付中心<br>请稍候...</p>
+                <p class="skip_question"></p>
+            </div>
+            <!--正在跳转 end-->
+            <!--跳转成功 start-->
+            <div class="tips_box hide" id="tips_box_success">
+                <div class="icon_box">
+                    <div class="loading_icon_02">
+                        <img src="images/success.png"/>
+                    </div>
+                </div>
+                <p class="skip_status">跳转成功</p>
+                <p class="skip_question"></p>
+            </div>
+            <!--跳转成功 end-->
+            <!--跳转失败 start-->
+            <div class="tips_box hide" id="tips_box_fail">
+                <div class="icon_box">
+                    <div class="loading_icon_02">
+                        <img src="images/fail.png"/>
+                    </div>
+                </div>
+                <p class="skip_status">
+                    验证失败，请检查您的登录信息是否正确
+                    <a href="javascript:;"></a>
+                </p>
+                <p class="skip_question"></p>
+            </div>
+            <!--跳转失败 start-->
+        </div>
+    </div>
+</div>
+</body>
+</html>

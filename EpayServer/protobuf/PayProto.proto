@@ -1,0 +1,27 @@
+syntax = "proto3";
+package protobuf.http;
+message GetPayHTMLC{
+	string hOpCode=1;
+	string orderRecordId=2;//订单id
+}
+message GetPayHTMLS{
+	string hOpCode=1;
+	string payHtml=2;//支付界面
+}
+message GetReturnUrlC{
+	string hOpCode=1;
+	string orderRecordId=2;//订单id
+}
+message GetReturnUrlS{
+	string hOpCode=1;
+	string returnUrl=2;//回调地址
+}
+message VerifyNotifyC{
+	string hOpCode=1;
+	string notifyId=2;//通知id
+	string appId=3;//应用id
+}
+message VerifyNotifyS{
+	string hOpCode=1;
+	int32 result=2;//1有，2没有
+}

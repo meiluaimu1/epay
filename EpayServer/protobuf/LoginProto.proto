@@ -1,0 +1,9 @@
+syntax = "proto3";
+package protobuf.http;
+message LoginC{
+	string hOpCode=1;
+	string token=2;
+}
+message LoginS{
+	string hOpCode=1;
+}

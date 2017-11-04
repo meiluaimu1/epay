@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="js/lib/threecss-c.js?v=v1.0.0" type="text/javascript"></script>
+</head>
+<script type="text/javascript">
+	//初始化内部类
+	$T.version.init();
+    //加载内部类
+    $T.version.loadScript("js/lib/jquery.min.js");
+	$T.version.loadScript("js/lib/jquery.cookie.js");
+	$T.version.loadScript("js/lib/Math.uuid.js");
+	
+    $T.version.loadScript("js/app/NotificationExt.js");
+    $T.version.loadScript("js/app/Url.js");
+    $T.version.loadScript("js/app/CookieParam.js");
+    $T.version.loadScript("js/app/CookieName.js");
+    $T.version.loadScript("js/app/data/http/TokenProxy.js");
+    $T.version.loadScript("js/app/LoginMediator.js");
+
+    window.onload = function () {
+        //初始化过滤器
+        var testFilter = new TestFilter();
+        $T.httpResultFilter.addFilter(testFilter);
+        //初始化控制器
+        $T.loginMediator.init();
+        $T.register.register($T.loginMediator);
+    }
+</script>
+<body>
+<div>
+    用户名：<input type="text" id="userName"/></br>
+    密码：<input type="text" id="userPassword"/></br>
+    <input type="button" value="登陆" id="loginUCenter"/></br>
+</div>
+</body>
+</html>

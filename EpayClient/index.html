@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>收银台--支付</title>
+    <script src="js/lib/threecss-c.js?v=v1.0.0" type="text/javascript"></script>
+</head>
+<script type="text/javascript">
+    //初始化内部类
+    $T.version.init();
+    //加载内部类
+    $T.version.loadScript("js/lib/jquery.min.js");
+    $T.version.loadScript("js/lib/jquery.cookie.js");
+    $T.version.loadScript("js/lib/Math.uuid.js");
+
+    $T.version.loadScript("js/app/NotificationExt.js");
+    $T.version.loadScript("js/app/Url.js");
+    $T.version.loadScript("js/app/CookieParam.js");
+    $T.version.loadScript("js/app/CookieName.js");
+    $T.version.loadScript("js/app/data/http/AppProxy.js");
+    $T.version.loadScript("js/app/data/http/OrderRecordProxy.js");
+    $T.version.loadScript("js/app/data/http/PayProxy.js");
+    $T.version.loadScript("js/app/IndexMediator.js");
+    $T.version.loadScript("js/app/GetUrlParam.js");
+    $T.version.loadScript("js/app/PayCenterErrorFilter.js");
+    $T.version.loadScript("js/app/PayCenterErrorMsg.js");
+
+    $T.version.loadCss("css/base.css");
+    $T.version.loadCss("css/checkstand.css");
+
+    window.onload = function () {
+        //初始化过滤器
+        var payCenterErrorFilter = new PayCenterErrorFilter();
+        $T.httpResultFilter.addFilter(payCenterErrorFilter);
+        //初始化控制器
+        $T.indexMediator.init();
+        $T.register.register($T.indexMediator);
+    }
+</script>
+<body class="bg-e8e">
+<!--header start-->
+<div class="header">
+    <div class="wrapper">
+        <p>收银台</p>
+    </div>
+</div>
+<!--header over-->
+<!--main start-->
+<div class="wrapper">
+    <div class="mainContain">
+        <div class="mainT">
+            <h5 class="state">
+                <img class="stateIcon" src="images/sucIconS.png"/>
+                <span>订单提交成功，请您尽快付款。订单号：</span><span id="index_order_record_order_id"></span>
+            </h5>
+            <p class="alert">未成功支付，订单将在 <span>23小时50分钟</span> 后自动取消，请及时付款。</p>
+            <div class="borderB">
+                <a class="orderbtn" href="javascript:;">订单详情</a>
+                <div class="clear"></div>
+            </div>
+            <ul class="orderList hide" id="index_order_goods_list">
+            </ul>
+            <p class="money">应付金额：<span id="index_total_price"></span></p>
+
+        </div>
+        <div class="mainB">
+            <p class="borderB pb20">支付平台</p>
+            <p class="payStyle">支付宝</p>
+            <div class="mt30">
+                <p class="paySName">支付方式：<span>支付宝</span></p>
+                <a class="payBtn" href="javascript:;" id="index_pay">立即支付</a>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="index_payhtml"></div>
+<!--main over-->
+<!--footer start-->
+<p class="footer"></p>
+<!--footer over-->
+</body>
+</html>

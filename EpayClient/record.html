@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>收银台--生成订单</title>
+    <script src="js/lib/threecss-c.js?v=v1.0.0" type="text/javascript"></script>
+</head>
+<script type="text/javascript">
+    //初始化内部类
+    $T.version.init();
+    //加载内部类
+    $T.version.loadScript("js/lib/jquery.min.js");
+    $T.version.loadScript("js/lib/jquery.cookie.js");
+    $T.version.loadScript("js/lib/Math.uuid.js");
+
+    $T.version.loadScript("js/app/NotificationExt.js");
+    $T.version.loadScript("js/app/Url.js");
+    $T.version.loadScript("js/app/CookieParam.js");
+    $T.version.loadScript("js/app/CookieName.js");
+    $T.version.loadScript("js/app/data/http/TokenProxy.js");
+    $T.version.loadScript("js/app/data/http/AppProxy.js");
+    $T.version.loadScript("js/app/data/http/OrderRecordProxy.js");
+    $T.version.loadScript("js/app/RecordMediator.js");
+    $T.version.loadScript("js/app/GetUrlParam.js");
+
+    $T.version.loadCss("css/base1.css");
+    $T.version.loadCss("css/login_w.css");
+
+    window.onload = function () {
+        //初始化过滤器
+        var testFilter = new TestFilter();
+        $T.httpResultFilter.addFilter(testFilter);
+        //初始化控制器
+        $T.recordMediator.init();
+        $T.register.register($T.recordMediator);
+    }
+</script>
+<body>
+<!--header start-->
+<div class="logHeader">
+    <div class="wrapper">
+        <a href="javascript:;" style="color:#ffffff;font-size: 24px">
+            收银台--模拟生成订单
+        </a>
+    </div>
+</div>
+<!--header over-->
+<!--main start-->
+<div class="pr">
+    <div class="loginBox1">
+        <h3 class="logTitle">模拟生成订单--以下不用填写点击生成</h3>
+        <div class="pr pt30">
+            <div>对接Appid</div>
+            <div class="inputBox">
+                <input type="text" id="appId"/>
+            </div>
+            <div>对接App订单id</div>
+            <div class="inputBox">
+                <input type="text" id="orderRecordOrderId"/>
+            </div>
+            <div>总价格</div>
+            <div class="inputBox">
+                <input type="text" id="orderRecordTotalPrice" value="0.01"/>
+            </div>
+            <div>用户id</div>
+            <div class="inputBox">
+                <input type="text" id="orderRecordUserId"/>
+            </div>
+            <div>详情</div>
+            <div class="inputBox">
+                <input type="text" id="orderRecordOrderDetail"/>
+            </div>
+            <div>用户名</div>
+            <div class="inputBox">
+                <input type="text" id="orderRecordUserName"/>
+            </div>
+            <div>回调地址</div>
+            <div class="inputBox">
+                <input type="text" id="orderRecordReturnUrl"/>
+            </div>
+            <div>通知地址</div>
+            <div class="inputBox">
+                <input type="text" id="orderRecordNotifyUrl"/>
+            </div>
+            <div>商品id</div>
+            <div class="inputBox">
+                <input type="text" id="orderGoodsGoodsId"/>
+            </div>
+            <div>商品名</div>
+            <div class="inputBox">
+                <input type="text" id="orderGoodsName" value="企业网盘"/>
+            </div>
+            <div>商品单价</div>
+            <div class="inputBox">
+                <input type="text" id="orderGoodsPrice" value="0.01"/>
+            </div>
+            <div>商品数量</div>
+            <div class="inputBox">
+                <input type="text" id="orderGoodsNumber" value="2"/>
+            </div>
+            <div>商品详情</div>
+            <div class="inputBox">
+                <input type="text" id="orderGoodsDetail"/>
+            </div>
+            <div>商品链接</div>
+            <div class="inputBox">
+                <input type="text" id="orderGoodsUrl"/>
+            </div>
+            <div>商品类型数量</div>
+            <div class="inputBox">
+                <input type="text" id="orderGoodsNum" value="2"/>
+            </div>
+            <a class="loginBtn" href="javascript:;" id="createRecord">生成订单</a>
+        </div>
+    </div>
+</div>
+
+<!--main over-->
+<!--footer start-->
+<div class="logFooter">
+    <div class="wrapper">
+        <p></p>
+    </div>
+</div>
+<!--footer over-->
+</body>
+</html>

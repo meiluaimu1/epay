@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="js/lib/threecss-c.js?v=v1.0.0" type="text/javascript"></script>
+</head>
+<script type="text/javascript">
+	//初始化内部类
+	$T.version.init();
+	//加载内部类
+	$T.version.loadScript("js/lib/jquery.min.js");
+	$T.version.loadScript("js/lib/jquery.cookie.js");
+	$T.version.loadScript("js/lib/Math.uuid.js");
+    //加载内部类
+    $T.version.loadScript("js/app/NotificationExt.js");
+    $T.version.loadScript("js/app/Url.js");
+    $T.version.loadScript("js/app/CookieParam.js");
+    $T.version.loadScript("js/app/CookieName.js");
+    $T.version.loadScript("js/app/data/http/LoginProxy.js");
+    $T.version.loadScript("js/app/LoginPayCenterMediator.js");
+    $T.version.loadScript("js/app/GetUrlParam.js");
+
+    window.onload = function () {
+        //初始化过滤器
+        var testFilter = new TestFilter();
+        $T.httpResultFilter.addFilter(testFilter);
+        //初始化控制器
+        $T.loginPayCenterMediator.init();
+        $T.register.register($T.loginPayCenterMediator);
+    }
+</script>
+<body>
+<div>
+    <h1>正在登陆...</h1>
+</div>
+</body>
+</html>

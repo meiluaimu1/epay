@@ -1,0 +1,60 @@
+syntax = "proto3";
+package protobuf.http;
+message CreateAppC{
+	string hOpCode=1;
+	string appName=2;//名字
+	string appReturnUrl=3;//回调地址
+	string appNotifyUrl=4;//通知地址
+}
+message CreateAppS{
+	string hOpCode=1;
+	AppData app=2;
+}
+message UpdateAppC{
+	string hOpCode=1;
+	string appId=2;
+	string appName=3;//空不修改
+	bool updateAppKey=4;//是否重修生成appKey
+	int32 appState=5;//状态1，2，3，其他不做修改
+	string appReturnUrl=6;//空不修改
+	string appNotifyUrl=7;//空不修改
+}
+message UpdateAppS{
+	string hOpCode=1;
+	AppData app=2;
+}
+message GetAppC{
+	string hOpCode=1;
+	string appId=2;
+}
+message GetAppS{
+	string hOpCode=1;
+	AppData app=2;
+}
+message GetAppListC{
+	string hOpCode=1;
+	string appName=2;//like
+	string appCreateTimeGreaterThan=3;//大于等于某个时间段（yyyy-MM-dd HH:mm:ss）
+	string appCreateTimeLessThan=4;//小于等于某个时间段（yyyy-MM-dd HH:mm:ss）
+	int32 appState=5;
+	int32 currentPage=6;
+	int32 pageSize=7;//pageSize传0，说明不分页
+}
+message GetAppListS{
+	string hOpCode=1;
+	repeated AppData appList=2;
+	int32 currentPage=3;
+	int32 pageSize=4;//pageSize传0，说明不分页
+	int32 totalPage=5;//总页数
+	int32 allNum=6;//总条数
+}
+message AppData{
+	string appId=1;
+	string appName=2;
+	string appKey=3;//唯一标示
+	string appCreateTime=4;
+	string appUpdateTime=5;
+	int32 appState=6;//1：可用，2：不可用，3：已删除
+	string appReturnUrl=7;
+	string appNotifyUrl=8;
+}

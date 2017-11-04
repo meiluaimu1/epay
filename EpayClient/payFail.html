@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>收银台--付款失败</title>
+    <script src="js/lib/threecss-c.js?v=v1.0.0" type="text/javascript"></script>
+</head>
+<script type="text/javascript">
+    //初始化内部类
+    $T.version.init();
+    //加载内部类
+    $T.version.loadScript("js/lib/jquery.min.js");
+    $T.version.loadScript("js/lib/jquery.cookie.js");
+    $T.version.loadScript("js/lib/Math.uuid.js");
+
+    $T.version.loadScript("js/app/NotificationExt.js");
+    $T.version.loadScript("js/app/Url.js");
+    $T.version.loadScript("js/app/CookieParam.js");
+    $T.version.loadScript("js/app/CookieName.js");
+    $T.version.loadScript("js/app/PayFailMediator.js");
+
+    $T.version.loadCss("css/base.css");
+    $T.version.loadCss("css/checkstand.css");
+
+    window.onload = function () {
+        //初始化过滤器
+        var testFilter = new TestFilter();
+        $T.httpResultFilter.addFilter(testFilter);
+        //初始化控制器
+        $T.payFailMediator.init();
+        $T.register.register($T.payFailMediator);
+    }
+</script>
+<body>
+<div class="bg-e8e">
+    <!--header start-->
+    <div class="header">
+        <div class="wrapper">
+            <p>收银台</p>
+        </div>
+    </div>
+    <!--header over-->
+    <!--main start-->
+    <div class="wrapper">
+        <div class="mainContain">
+            <div class="paymainT">
+                <img class="payImg" src="images/payFail.png" alt=""/>
+            </div>
+            <div class="paymainB">
+                <h5 class="payText payFailT">付款失败，请重新支付</h5>
+                <p class="payAlert">请检查您的余额是否充足，请检查您的余额是否充足</p>
+                <a class="payBtnText" href="javascript:;">继续支付</a>
+            </div>
+        </div>
+    </div>
+    <!--main over-->
+    <!--footer start-->
+    <p class="footer payfooter"></p>
+    <!--footer over-->
+</div>
+</body>
+</html>
