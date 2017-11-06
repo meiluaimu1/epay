@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.epay.action.PCErrorPack;
-import org.epay.action.UserAction;
+import org.epay.action.IdentityAction;
 import org.epay.data.UserData;
 import org.epay.http.HOpCodePayCenter;
 import org.epay.protobuf.http.LoginProto.LoginC;
@@ -26,7 +26,7 @@ public class LoginService implements IHttpListener {
 
 	public HttpPacket loginHandle(HttpPacket httpPacket) throws HttpException {
 		LoginC message = (LoginC) httpPacket.getData();
-		UserData userData = UserAction.getUser(message.getToken());
+		UserData userData = IdentityAction.getUser(message.getToken());
 		if (userData == null) {
 			PCError errorPack = PCErrorPack.create(PCErrorCode.ERROR_CODE_4, httpPacket.hSession.headParam.hOpCode);
 			throw new HttpException(HOpCodePayCenter.PC_ERROR, errorPack);

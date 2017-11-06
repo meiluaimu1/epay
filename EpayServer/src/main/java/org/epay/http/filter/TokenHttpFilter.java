@@ -1,7 +1,7 @@
 package org.epay.http.filter;
 
 import org.epay.action.PCErrorPack;
-import org.epay.action.UserAction;
+import org.epay.action.IdentityAction;
 import org.epay.data.UserData;
 import org.epay.http.HOpCodePayCenter;
 import org.epay.protobuf.http.PCErrorProto.PCError;
@@ -23,7 +23,7 @@ public class TokenHttpFilter implements IHttpFilter {
 				throw new HttpException(HOpCodePayCenter.PC_ERROR, errorPack);
 			}
 		}
-		UserData userData = UserAction.getUser(httpPacket.hSession.headParam.token);
+		UserData userData = IdentityAction.getUser(httpPacket.hSession.headParam.token);
 		if (userData == null) {
 			PCError errorPack = PCErrorPack.create(PCErrorCode.ERROR_CODE_4, httpPacket.hSession.headParam.hOpCode);
 			throw new HttpException(HOpCodePayCenter.PC_ERROR, errorPack);

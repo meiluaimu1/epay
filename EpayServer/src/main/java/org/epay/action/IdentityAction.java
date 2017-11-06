@@ -11,7 +11,7 @@ import org.grain.httpserver.HttpConfig;
 
 import net.sf.json.JSONObject;
 
-public class UserAction {
+public class IdentityAction {
 	public static UserData getUser(String token) {
 		JSONObject js = new JSONObject();
 		js.put("hOpCode", "11");
