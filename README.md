@@ -1,6 +1,6 @@
 # epay
 
-[![Build Status](https://travis-ci.org/dianbaer/Pay.svg?branch=master)](https://travis-ci.org/dianbaer/Pay)
+[![Build Status](https://travis-ci.org/dianbaer/epay.svg?branch=master)](https://travis-ci.org/dianbaer/epay)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ee6a61826df447279701b6b9584084a4)](https://www.codacy.com/app/232365732/Pay?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dianbaer/Pay&amp;utm_campaign=Badge_Grade)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
