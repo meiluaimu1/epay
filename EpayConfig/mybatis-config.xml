@@ -31,7 +31,7 @@
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
 				<property name="driver" value="org.mariadb.jdbc.Driver" />
-				<property name="url" value="jdbc:mysql://localhost:3307/pay?useUnicode=true&amp;characterEncoding=utf8" />
+				<property name="url" value="jdbc:mysql://localhost:3307/epay?useUnicode=true&amp;characterEncoding=utf8" />
 				<property name="username" value="root" />
 				<property name="password" value="root" />
 				<property name="poolMaximumActiveConnections" value="20" />
@@ -46,11 +46,11 @@
 	</environments>
 
     <mappers>
-        <mapper resource="dao/mappers/base/AppMapper.xml" />
-        <mapper resource="dao/mappers/base/OrderRecordMapper.xml" />
-        <mapper resource="dao/mappers/ext/OrderRecordMapperExt.xml" />
-        <mapper resource="dao/mappers/base/OrderGoodsMapper.xml" />
-        <mapper resource="dao/mappers/base/PayNotifyLogMapper.xml" />
-        <mapper resource="dao/mappers/base/NotifyMapper.xml" />
+        <mapper resource="org/epay/mappers/base/AppMapper.xml" />
+        <mapper resource="org/epay/mappers/base/OrderRecordMapper.xml" />
+        <mapper resource="org/epay/mappers/ext/OrderRecordMapperExt.xml" />
+        <mapper resource="org/epay/mappers/base/OrderGoodsMapper.xml" />
+        <mapper resource="org/epay/mappers/base/PayNotifyLogMapper.xml" />
+        <mapper resource="org/epay/mappers/base/NotifyMapper.xml" />
 	</mappers>
 </configuration> 

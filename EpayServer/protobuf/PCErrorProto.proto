@@ -1,5 +1,5 @@
 syntax = "proto3";
-package protobuf.http;
+package org.epay.protobuf.http;
 message PCError{
 	string hOpCode=1;
 	PCErrorCode errorCode=2;

@@ -1,6 +1,6 @@
 function Url() {
-	this.url = "http://localhost:8081/PayServer/s";
-	this.ucUrl = "http://localhost:8080/IdentityServer/s";
-	this.clientUrl = "http://localhost/PayClient/"
+	this.url = "http://localhost:8081/EpayServer/s";
+	this.ucUrl = "http://localhost:8080/StartpointServer/s";
+	this.clientUrl = "http://localhost/EpayClient/"
 }
 $T.url = new Url();

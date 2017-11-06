@@ -1,5 +1,5 @@
 syntax = "proto3";
-package protobuf.http;
+package org.epay.protobuf.http;
 message GetPayHTMLC{
 	string hOpCode=1;
 	string orderRecordId=2;//订单id

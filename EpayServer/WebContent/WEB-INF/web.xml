@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>PayServer</display-name>
+  <display-name>EpayServer</display-name>
   <!-- 初始化servlet -->
   	<servlet>
 		<servlet-name>InitHttpServer</servlet-name>
@@ -9,12 +9,12 @@
 	</servlet>
 	<servlet>
 	    <servlet-name>AlipayReturnServlet</servlet-name>
-	    <servlet-class>http.AlipayReturnServlet</servlet-class>
+	    <servlet-class>org.epay.http.AlipayReturnServlet</servlet-class>
 	    <load-on-startup>1</load-on-startup>
 	  </servlet>
 	  <servlet>
 	    <servlet-name>AlipayNotifyServlet</servlet-name>
-	    <servlet-class>http.AlipayNotifyServlet</servlet-class>
+	    <servlet-class>org.epay.http.AlipayNotifyServlet</servlet-class>
 	    <load-on-startup>2</load-on-startup>
 	  </servlet>
 	 
@@ -34,16 +34,16 @@
  	<!-- 扩展类，服务器启动时自动初始化这个类 -->
 	<context-param>
 		<param-name>Expand</param-name>
-		<param-value>server.Expand</param-value>
+		<param-value>org.epay.server.Expand</param-value>
 	</context-param>
  	<!-- 日志对象，需要传进日志对象grain-httpserver才能打印日志 -->
 	<context-param>
 		<param-name>ILog</param-name>
-		<param-value>log.HttpLog</param-value>
+		<param-value>org.epay.log.HttpLog</param-value>
 	</context-param>
 	<context-param>
 	    <param-name>configFileName</param-name>
-	    <param-value>PayServer.properties</param-value>
+	    <param-value>EpayServer.properties</param-value>
 	</context-param>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

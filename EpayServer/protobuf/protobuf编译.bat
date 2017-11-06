@@ -1,5 +1,5 @@
 C:
-cd C:\Users\admin\Desktop\github\Pay\trunk\PayServer\protobuf
+cd C:\Users\admin\Desktop\github\epay\trunk\EpayServer\protobuf
 protoc --java_out=./ AppProto.proto
 protoc --java_out=./ PCErrorProto.proto
 protoc --java_out=./ OrderRecordProto.proto

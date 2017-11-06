@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <project name="Server" default="dist" basedir=".">
-	<property name="Server-src" location="${Server.dir}/src" />
+	<property name="Server-src" location="${Server.dir}/src/main/java" />
 	<property name="Server-build" location="${Server.dir}/build" />
 	<property name="Server-dist" location="${Server.dir}/dist" />
 	<property name="Server-WebContent" value="${Server.dir}/WebContent" />
 	<property name="webxml" value="${Server-WebContent}/WEB-INF/web.xml" />
 	<target name="generwar" depends="distServer">
-		<war destfile="${Server-dist}/PayServer.war" webxml="${webxml}">
+		<war destfile="${Server-dist}/EpayServer.war" webxml="${webxml}">
 			<fileset dir="${Server-WebContent}/">
 				<include name="html/**" />
 				<include name="js/**" />
@@ -41,9 +41,13 @@
 		</javac>
 	</target>
 	<target name="distServer" depends="compileServer">
-		<jar destfile="${Server-dist}/PayServer.jar">
+		<jar destfile="${Server-dist}/EpayServer.jar">
 			<fileset dir="${Server-build}">
 				<include name="**/**" />
+			</fileset>
+			<fileset dir="${Server-src}">
+				<include name="**/*.xml" />
+				<exclude name="generatorConfig.xml"/>
 			</fileset>
 		</jar>
 	</target>

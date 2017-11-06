@@ -1,5 +1,5 @@
 syntax = "proto3";
-package protobuf.http;
+package org.epay.protobuf.http;
 message LoginC{
 	string hOpCode=1;
 	string token=2;

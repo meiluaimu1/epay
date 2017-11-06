@@ -1,5 +1,5 @@
 syntax = "proto3";
-package protobuf.msg;
+package org.epay.protobuf.msg;
 message AddNotify{
 	string orderRecordId=1;
 }

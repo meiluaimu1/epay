@@ -1,5 +1,5 @@
 syntax = "proto3";
-package protobuf.http;
+package org.epay.protobuf.http;
 message CreateOrderRecordC{
 	string hOpCode=1;//必有
 	string appId=2;//必有
